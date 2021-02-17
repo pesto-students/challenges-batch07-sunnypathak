@@ -8,13 +8,8 @@ function balancedBraces(str) {
   const openingBrackets = [...bracketsMap.values()];
 
   const temp = [];
-  const len = str.length;
 
-  let ch;
-
-  for (let i = 0; i < len; i += 1) {
-    ch = str[i];
-
+  for (const ch of str) {
     if (openingBrackets.indexOf(ch) > -1) {
       temp.push(ch);
     } else if (closingBrackets.indexOf(ch) > -1) {

@@ -1,6 +1,5 @@
 function removeFalsyValues(array) {
-  const arrWithoutFalsyValues = array.filter(el => el);
-  return arrWithoutFalsyValues;
+  return array.filter(Boolean);
 }
 export {
   removeFalsyValues,
