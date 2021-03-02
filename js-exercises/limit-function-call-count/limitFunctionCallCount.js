@@ -1,12 +1,11 @@
 const limitFunctionCallCount = (func, n) => {
-  let result;
-  let times = n;
+  let times = 0;
   return function fn(...args) {
-    if (times > 1) {
-      result = func.apply(this, args);
-    } else if (times <= 1) result = null;
-    times -= 1;
-    return result;
+    if (times < n) {
+      times += 1;
+      return func.apply(this, args);
+    }
+    return null;
   };
 };
 
